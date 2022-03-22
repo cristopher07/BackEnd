@@ -68,7 +68,7 @@ public class Controlador {
 	public ResponseEntity<Model> createPelicula(@RequestBody Model pelicula) {
 		try {
 			Model _pelicula = repo.save(new Model(pelicula.getNombre(), pelicula.getGenero(), 
-					pelicula.getAutor(), pelicula.getAnio(), pelicula.getDatetime()));
+					pelicula.getAnio(), pelicula.getAutor(),  pelicula.getDatetime()));
 			return new ResponseEntity<>(_pelicula, HttpStatus.CREATED);
 		} catch (Exception e) {
 			return new ResponseEntity<>(null, HttpStatus.EXPECTATION_FAILED);
